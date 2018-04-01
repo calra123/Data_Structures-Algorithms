@@ -1,3 +1,4 @@
+//stack implementation using arrays
 #include <iostream>
 #define size 10
 using namespace std;

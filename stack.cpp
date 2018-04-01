@@ -1,4 +1,3 @@
-
 #include <iostream>
 #define size 10
 using namespace std;
@@ -15,12 +14,14 @@ class stack
 	void push()
 	{
 		int ele;
-		cout<<"Enter the element";
+	//	cout<<"Enter the element";
 		cin>>ele;
 		if(top==size-1)
 		cout<<"stack overflow";
 		else
-		a[++top]=ele;
+		{	a[++top]=ele;
+			cout<<endl<<a[top]<<" inserted";
+		}
 	}
 	
 	void pop()
@@ -29,7 +30,7 @@ class stack
 		{cout<<"empty stack";
 		return;
 		}
-		cout<<a[top]<<" deleted";
+		cout<<endl<<a[top]<<" deleted";
 		a[top--]=0;
 	}
 		
@@ -39,27 +40,29 @@ class stack
 		{cout<<"empty stack";
 		return;
 		}
-		for(int i=0;i<top;i++)
+		cout<<"\nStack elements are : ";
+		for(int i=0;i<=top;i++)
 		cout<<a[i]<<" ";
+		cout<<endl;
 	}
 }ob;
 int exeunt()
 {
 	return 5;
 }
-void chu()
+int chu()
 {
 	int i,j=1;
-		cout<<" 1 to push";
-	  	cout<<" 2 to pop";
-	   	cout<<" 3 to display";
-	   	cout<<"4 to exit";
-	  cin>>i;
+	/*	cout<<" 1 to push"<<endl;
+	  	cout<<" 2 to pop"<<endl;
+	   	cout<<" 3 to display"<<endl;
+	   	cout<<" 4 to exit"<<endl;*/
+	cin>>i;
 	switch(i)
 	{	case 1:ob.push();break;
 	  	case 2:ob.pop();break;
 	   	case 3:ob.display();break;
-	   	case 4:j=exeunt();
+	   	case 4:j=exeunt();break;
 	}
 	return j;
 	  
@@ -67,7 +70,8 @@ void chu()
 
 int main() 
 {
-while(j!=5)
-	chu();
+	int j=1;
+	while(j!=5)
+		j=chu();
 	return 0;
 }
